@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Pirata+One|Rubik:900');
+html {
+    overflow-x: hidden;
+}
 
 body {
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
     display: block;
     background: linear-gradient(to right, #24243e, #141E30, #0f0c29);
 }
@@ -61,6 +67,8 @@ body {
     font-size: 6rem;
     position: relative;
     background: linear-gradient(to right, #24243f, #141E31, #0f0c28);
+
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: all ease 1s;
@@ -88,10 +96,13 @@ body {
 
 .downloads {
     position: relative;
-    width: 800px;
+    width: 1000px;
     margin-top: 4rem;
-    display: grid;
-    grid-template-columns: auto auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
     transition: all ease 1s;
 }
 
@@ -100,6 +111,7 @@ body {
     font-family: 'Rubik', sans-serif;
     color: rgba(255,255,255,0.5);
     cursor: pointer;
+    width: 350px;
 
     padding: 1.5rem;
     margin: 2rem;
@@ -133,16 +145,24 @@ body {
     opacity: 0.6;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
     .heading h1 {
         font-size: 3rem;
         transition: all ease 1s;
     }
 
     .downloads {
-        grid-template-columns: auto;
         width: 450px;
     }
 }
 
+@media screen and (max-width: 500px) {
+    .heading h1 {
+        font-size: 2rem;
+        transition: all ease 1s;
+    }
 
+    .downloads {
+        width: 300px;
+    }
+}
